@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="header">
+    <h1>
+      {{ title }}
+    </h1>
+  </div>
+
+      <!-- <a (click)="changeMode('create')">New Movie</a> -->
+
+
+  <div class="movies">
+    <div id="godam">
+    <fieldset>
+      <span *ngIf="mode=='display'">
+      <a>Movie List <button (click)="changeMode('create')">Add A New Movie</button></a>  
+          <table border=1 >
+              <tr>
+                  <td>Movie Title</td>
+                  <td>Available Actions</td>
+              </tr>
+              <tr *ngFor="let movie of movies">
+                      <td>{{ movie.title }}</td>
+                      <td><button (click)="editMovie(movie._id)">Read Review</button>
+                      <button (click)="rateMovie(movie._id)">Write Review</button></td>
+              </tr>
+          </table>
+      </span>
+    </fieldset>
+    </div>
+
+    <div id="editContain">
+      <fieldset *ngIf="mode=='edit'">
+        <legend>Reviews for {{ movie.title }}</legend>
+        <table border=1 >
+              <tr>
+                  <td>reviewer</td>
+                  <td>stars</td>
+                  <td>The reviews</td>
+              </tr>
+              <tr>
+                      <td>{{ movie.name[0] }}<br><hr>
+                          {{ movie.name[1] }}<br><hr>
+                          {{ movie.name[2] }}<br><hr>
+                      </td>
+                      <td>{{ movie.star[0] }}<br><hr>
+                          {{ movie.star[1] }}<br><hr>
+                          {{ movie.star[2] }}<br><hr>
+                      </td>
+                      <td>{{ movie.detail[0] }}<br><hr>
+                          {{ movie.detail[1] }}<br><hr>
+                          {{ movie.detail[2] }}<br><hr>
+                      </td>
+              </tr>
+          </table>
+            <button (click)="deleteMovie(movie._id)">Delete</button>
+            <button (click)="changeMode('display')">Cancel</button> 
+      </fieldset>
+    </div>
+
+    <div id="newContain">
+      <fieldset *ngIf="mode=='create'">
+          <legend>Submit a movie and your review</legend>
+            <p style='color: red;'>{{ error }}</p>
+          <form (submit)="createMovie(thisForm)" #thisForm='ngForm'>
+              <div id="newInput">
+              <p>Movie Title: <input type="text" name="newMovie.title" [(ngModel)]="newMovie.title" /></p>
+              <p>Your Name: <input type="text" name="newMovie.name" [(ngModel)]="newMovie.name" /></p>
+              <p>Rating: <select name="newMovie.star" [(ngModel)]="newMovie.star">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+              </select></p>
+              <p>your review: <textarea rows="4" cols="50" name="newMovie.detail" [(ngModel)]="newMovie.detail"></textarea></p>
+            </div>
+              <input type="submit" value="Create Movie" />
+              <button (click)="changeMode('display')">Cancel</button>
+          </form>
+      </fieldset>
+    </div>
+
+      <span *ngIf="mode=='review'">
+      <div id="reviewContain">
+        <p style='color: red;'>{{ error }}</p>
+          <form (submit)="createReview(thisForm)" #thisForm='ngForm'>
+            <p>your Name: <input type="text" name="newMovie.name" [(ngModel)]="newMovie.name" /></p>
+            <br>
+            <p>Rating: <select name="newMovie.star" [(ngModel)]="newMovie.star">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+              </select></p>
+            <p>your review: <textarea rows="4" cols="50" name="newMovie.detail" [(ngModel)]="newMovie.detail"></textarea></p>
+            <input type="submit" value="Create Review" />
+            <button (click)="changeMode('display')">Cancel</button>
+          </form>
+      </div>
+    </span>
+  </div>
+</div>

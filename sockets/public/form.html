@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function (){
+    
+            var socket = io(); //1
+    
+            socket.on('greeting', function (data) { //4
+                console.log(data.msg); //5
+                socket.emit('thankyou', { msg: 'Thank you for connecting me! -Client' }); //6
+            });
+         })
+    </script>
+</head>
+<body>
+<div class="container">
+	<form action='/form' method='post'>
+	  <div class="form-group">
+	    <label for="exampleFormControlInput1">Your Name: </label>
+	    <input class="form-control" type="text" name="name">
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleFormControlSelect1">Dojo Location: </label>
+	    <select class="form-control" name="location">
+	      <option>Mountain View</option>
+	      <option>Texas</option>
+	      <option>Seattle</option>
+	      <option>Chicago</option>
+	    </select>
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleFormControlSelect1">Favorite Language: </label>
+	    <select class="form-control" name="language">
+	      <option>Javascript</option>
+	      <option>Flask</option>
+	      <option>Express</option>
+	      <option>Java</option>
+	      <option>Swift</option>
+	      <option>PHP</option>
+	      <option>Ruby</option>
+	      <option>C++</option>
+	    </select>
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleFormControlTextarea1">Comment (optional):</label><br>
+	    <textarea class="form-control" name="textarea" rows="3"></textarea>
+	  </div>
+	  <input class="btn btn-primary" type="submit" value="create user">
+	</form>
+</div>
+</body>
+</html>

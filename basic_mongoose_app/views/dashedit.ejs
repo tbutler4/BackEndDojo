@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit them</title>
+</head>
+<body>
+	<h1>Edit them</h1>
+
+<form action='/<%= pods[0].id %>' method='post'>
+    Name: <input type='text' name='name' value='<%= pods[0].name %>'>
+    <br>
+    Age: <input type='text' name='age' value='<%= pods[0].age %>'>
+    <br>
+    Hobby: <input type='text' name='hobby' value='<%= pods[0].hobby %>'>
+    <br>
+    <input type='submit' value='Edit'>
+</form>
+<br>
+<button><a href="/">Cancel</a></button>
+</body>
+</html>

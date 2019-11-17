@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Pod</title>
+</head>
+<body>
+	<h1>Dolphin pod</h1>
+		<p><img src="image.jpg" height="300" width="500"></p>
+<div class="info">
+	<h2>Dolphin pod</h2>
+    <% for (var x in pods) { %>
+
+        <h3>name: <%= pods[x].name %></h3>
+        <h4>age: <%= pods[x].age %></h4>
+        <h5>hobby: <%= pods[x].hobby %></h5>
+        <button><a href="/edit/<%= pods[x].id %>">Edit</a></button>
+        <button><a href="/pod/<%= pods[x].id %>">View</a></button>
+        <button><a href="/pod/destroy/<%= pods[x].id %>">Remove</a></button>
+        <hr>
+    <% } %>
+</div>
+<br>
+
+<button><a href="/addpod">Add</a></button>
+</body>
+</html>

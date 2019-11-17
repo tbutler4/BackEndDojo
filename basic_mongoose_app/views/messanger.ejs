@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>messangers</title>
+</head>
+<body>
+
+<form action='/addData' method='post'>
+    Name: <input type='text' name='name'>
+    <br>
+    Message: <br><textarea rows="4" cols="50" name='message'></textarea>
+    <br>
+    <input type='submit' value='Add'>
+</form>
+			<br>
+	        <br>
+	        <br>
+	        <br>
+<BLOCKQUOTE>
+	<% for (var x of messages.reverse()) { %>
+
+	        <h2>User: <%= x.name %></h2>
+	        <h3>message: <%= x.message %></h3>
+	        <br>
+	        <br>
+
+
+	        <% for (var y of x.reply) { %>
+	         	<h4>name: <%= y.subName %></h4>
+	         	<h5>Comment; <%= y.comment %></h5>
+	         <% } %>
+
+	        	    <form action='/addSubData/<%= x._id %>' method='post'>
+					    Name: <input type='text' name='subName'>
+					    <br>
+					    Comment: <br><textarea rows="4" cols="50" name='comment'></textarea>
+					    <br>
+					    <input type='submit' value='Add'>
+					</form>
+
+	<% } %>
+</BLOCKQUOTE>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+*{
+	/*outline: 1px solid gold;*/
+	margin: 0px; 
+}
+.container{
+	width: 1200px;
+	border: 3px solid green;
+	border-radius: 25px;
+}
+.container .header{
+		width: 1200px;
+		font-size: 40px;
+		border: 3px solid red;
+		border-radius: 25px;
+		text-align: center;
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+		background-color: gray;
+	}
+.container .godam{
+		width: 1200px;
+		border: 3px solid blue;
+		border-radius: 25px;
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+	}
+.container .movies{
+		width: 1200px;
+		height: 500px;
+		border: 3px solid violet;
+		border-radius: 25px;
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+		width: auto;
+		overflow: scroll;
+}
+.container .movies #movieContain{
+			margin-top: 10px;
+				width: 1200px;
+}
+.container .movies #movieContain #logo{
+				height: 150px;
+				width: 150px;
+				background-color: silver;
+				display: inline-block;
+				margin-right: 10px;
+				vertical-align: top;
+}
+.container .movies #movieContain #info{
+				align-content: center;
+
+				display: inline-block;
+}
+.container .movies #movieContain #editor{
+				width: 100px;
+				display: inline-block;
+}
+
+.container .movies #editContain{
+
+
+}
+.container .movies #editContain #editInput{
+				margin-top: 10px;
+				height: 200px;
+
+}
+.container .movies #editContain #editButtons{
+				align-content: right;
+
+}
+.container .movies #newContain{
+
+
+}
+.container .movies #newContain #newInput{
+				margin-top: 10px;
+				height: 200px;
+
+}
+#top{
+	width: 1200px;
+}
+#top #img{
+	vertical-align: top;
+	margin-right: 30px;
+}
+#top #logo{
+				height: 100px;
+				width: 100px;
+				display: inline-block;
+				margin-right: 10px;
+
+
+}
+#top #info{
+
+				margin-left: 50px;
+				display: inline-block;
+
+}
+#middle {
+			display: block;
+			margin-bottom: 100px; 
+}	
+
+#bottom {
+			display: block;
+			margin-top: 30px; 
+}

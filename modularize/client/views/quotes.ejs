@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>quotes</title>
+</head>
+<body>
+<div class="resultContain">
+	<h1>Quotes</h1>
+	<div class="info">
+		<h2>Here are all the users:</h2>
+	    <% for (var x in users) { %>
+	        <h3>Quote: <%= users[x].quote %></h3>
+	        <h4>Name: <%= users[x].name %> on <%= users[x].createdAt %></h4>
+	        <hr>
+	    <% } %>
+	</div>
+
+</div>
+</body>
+</html>

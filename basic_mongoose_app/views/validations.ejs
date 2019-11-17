@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>validate</title>
+</head>
+<body>
+
+<!-- tip to easily see objects printed in full instead of [object Object] -->
+<%- JSON.stringify(messages) %> 
+<!-- based on the structure of your messages, determine how to display them -->
+<% if(messages.registration) { %>
+     <% for (var x of messages.registration) { %>
+      <h3><%= x %></h3>
+     <% } %>
+ <% } %>
+
+<form action='/users' method='post'>
+    Name: <input type='text' name='first_name'>
+    Last: <input type='text' name='last_name'>
+    age: <input type='text' name='age'>
+    Email: <input type='text' name='email'>
+    <input type='submit' value='create user'>
+</form>
+
+</body>
+</html>
